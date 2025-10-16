@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farzana's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to projects folder index -->
+    <link rel="index" href="projects/index.html" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="projects/" target="_blank">Projects Folder</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+    <section id="Hero">
+        <h1>Hello!, I'm Farzana</h1>
+        <p> A Passionate Web developer who loves solving DSA problems, debugging layouts, and building accessible, responsive websites.</p>
+    </section>
+
+    <section id="About">
+        <h2>About Me</h2>
+        <p>I'm methodical, curious, and resilient. I thrive on dry-running code, mastering bitwise logic, and helping others learn. My goal is to bridge frontend and backend skills to become a full-stack developer.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>Loan Processing System</h3>
+        <p>A web-based system that simulates loan application, verification, and approval workflows. Built with HTML, CSS, JavaScript, and backend logic using Java or Node.js.</p>
+        <a href="projects/loan-processing/index.html" target="_blank" class="btn">View Project</a>
+
+      </div>
+
+      <div class="project-card a">
+        <h3>Bitwise Visualizer</h3>
+        <p>An interactive tool to explore XOR and binary logic, helping users understand bitwise operations through visual comparisons.</p>
+        <a href="#" target="_blank">Coming Soon</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      
+        <form id="contactForm">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Send</button>
+        </form>
+        <div id="thankYouMessage" style="margin-top: 1rem; font-weight: bold;"></div>
+
+        </section>  
+        
+        <footer>
+            <p>&copy; 2025 Farzana. Build with love and logic</p>
+        </footer>
+
+        <script src="script.js"></script>
+        </body>    
+        </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Processing System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <h1> Loan Processing System </h1>
+    <form id="loanForm">
+        <label for="name">Name:</label>
+  <input type="text" id="name" required />
+  <label for="amount">Amount:</label>
+  <input type="number" id="amount" required />
+  <label for="income">Annual Income</label>
+  <input type="number" id="income" required />
+  <label for="creditscore">CreditScore</label>
+  <input type="number" id="creditScore" required />
+  <button type="submit">Apply</button>
+</form>
+
+<div id="result">
+  <i id="resultIcon"></i>
+  <span id="resultText"></span>
+</div>
+
+<table id="historyTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Income</th>
+      <th>Credit Score</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<button id="clearHistory">Clear History</button>
+
+
+<script src="script.js"></script>
+    </body>
+</html>
