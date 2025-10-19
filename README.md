@@ -40,4 +40,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+If you'd like to connect or collaborate, feel free to reach out via:
+- Email: [firdosfarzana18@gmail.com]
+  
 ⚠️ Note: This project was previously unlicensed. As of October 19, 2025, it is released under the MIT License. Any use of this code before this date without permission is unauthorized. Please respect the license terms and credit the original author.
