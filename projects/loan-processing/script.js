@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let iconClass = "fa-circle-xmark";
     let boxClass = "denied";
 
- if (income >= amount * 2 && creditScore >= 7) {
+ if (income >= amount * 2 && creditScore >= 700) {
   status = "Loan Approved";
   iconClass = "fa-circle-check";
   boxClass = "approved";
