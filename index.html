@@ -47,20 +47,19 @@
 
     <section id="contact">
       <h2>Contact Me</h2>
-      
-        <form id="contactForm">
+       <form id="contactForm" action="https://formspree.io/f/xyznvpol" method="POST">
+       <label for="name">Name:</label>
+       <input type="text" id="name" name="name" required />
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" required />
+       <label for="email">Email:</label>
+       <input type="email" id="email" name="email" required />
 
         <label for="message">Message:</label>
-        <textarea id="message" required></textarea>
+        <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Send</button>
-        </form>
+  <button type="submit">Send</button>
+</form>
+       
         <div id="thankYouMessage" style="margin-top: 1rem; font-weight: bold;"></div>
 
         </section>  
