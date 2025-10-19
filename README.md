@@ -21,7 +21,7 @@ A web-based application to manage loan approvals, track history, and ensure accu
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2025] [Farzana kauser]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -40,3 +40,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+⚠️ Note: This project was previously unlicensed. As of October 19, 2025, it is released under the MIT License. Any use of this code before this date without permission is unauthorized. Please respect the license terms and credit the original author.
