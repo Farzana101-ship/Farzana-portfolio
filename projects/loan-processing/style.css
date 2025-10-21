@@ -130,10 +130,12 @@ button:hover {
 #result {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
 }
 
 #result.show {
   opacity: 1;
+  visibility: visible;
 }
 table {
   width: 90%;
@@ -152,4 +154,9 @@ th, td {
 th {
   background-color: #007bff;
   color: white;
+}
+
+input.error {
+  border: 2px solid red;
+  background-color: #ffe5e5;
 }
