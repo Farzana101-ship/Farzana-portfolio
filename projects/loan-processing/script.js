@@ -7,37 +7,79 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const amount = parseFloat(document.getElementById("amount").value);
-    const income = parseFloat(document.getElementById("income").value);
-    const creditScore = parseInt(document.getElementById("creditScore").value);
+    // ✅ [NEW] Get inputs separately for validation
+    const nameInput = document.getElementById("name");
+    const amountInput = document.getElementById("amount");
+    const incomeInput = document.getElementById("income");
+    const creditScoreInput = document.getElementById("creditScore");
 
+    // ✅ [NEW] Trim and parse values
+    const name = nameInput.value.trim();
+    const amount = parseFloat(amountInput.value);
+    const income = parseFloat(incomeInput.value);
+    const creditScore = parseInt(creditScoreInput.value);
+
+    // ✅ [NEW] Reset previous error highlights
+    [nameInput, amountInput, incomeInput, creditScoreInput].forEach(input => {
+      input.classList.remove("error");
+    });
+
+    // ✅ [NEW] Validation for required fields
+    let isValid = true;
+    if (name === "") {
+      nameInput.classList.add("error");
+      isValid = false;
+    }
+    if (isNaN(amount) || amount <= 0) {
+      amountInput.classList.add("error");
+      isValid = false;
+    }
+    if (isNaN(creditScore) || creditScore <= 0) {
+      creditScoreInput.classList.add("error");
+      isValid = false;
+    }
+
+    // ✅ [NEW] Stop submission if invalid
+    if (!isValid) {
+      alert("Please fill in all required fields correctly.");
+      return;
+    }
+
+    // --- Existing loan approval logic below ---
     let status = "Loan Denied";
     let iconClass = "fa-circle-xmark";
     let boxClass = "denied";
 
- if (income >= amount * 2 && creditScore >= 700) {
-  status = "Loan Approved";
-  iconClass = "fa-circle-check";
-  boxClass = "approved";
-} else {
-  status = "Loan Denied";
-  iconClass = "fa-circle-xmark";
-  boxClass = "denied";
-}
+    if (income >= amount * 2 && creditScore >= 700) {
+      status = "Loan Approved";
+      iconClass = "fa-circle-check";
+      boxClass = "approved";
+    }
 
-resultText.textContent = status;
-resultIcon.className = `fa-solid ${iconClass}`;
-resultBox.className = `${boxClass} show`;
+    resultText.textContent = status;
+    resultIcon.className = `fa-solid ${iconClass}`;
+    resultBox.className = `${boxClass} show`;
 
+    setTimeout(() => {
+      resultBox.style.opacity = "0"; // Start fading out
 
+      // ✅ Wait for transition to complete before fully hiding
+      setTimeout(() => {
+        resultBox.classList.remove("show", "approved", "denied");
+        resultBox.style.opacity = ""; // Reset inline style
+        resultText.textContent = "";
+        resultIcon.className = "";
+      }, 500); // Match CSS transition duration (0.5s)
+    }, 3000);
+
+    // ✅ [CHANGED] Use the validated variables instead of direct DOM access
     const application = {
-  name: document.getElementById("name").value,
-  amount,
-  income,
-  creditScore,
-  status
-};
-
+      name,
+      amount,
+      income,
+      creditScore,
+      status
+    };
 
     let history = JSON.parse(localStorage.getItem("loanHistory")) || [];
     history.push(application);
@@ -64,8 +106,9 @@ resultBox.className = `${boxClass} show`;
   }
 
   renderHistory();
-     document.getElementById("clearHistory").addEventListener("click", function () {
-  localStorage.removeItem("loanHistory");
-  renderHistory(); // refresh the table
-});
+
+  document.getElementById("clearHistory").addEventListener("click", function () {
+    localStorage.removeItem("loanHistory");
+    renderHistory();
+  });
 });
